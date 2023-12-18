@@ -15,7 +15,9 @@ public class anlEstoque {
         gerenciar.adicionar();
         
         nome = JOptionPane.showInputDialog("Qual Produto deseja Buscar? ");
+        
         result = gerenciar.buscarOtimizado(nome);
+        
         if(result == -1){
             JOptionPane.showMessageDialog(null, "Não encontrado");
         }
