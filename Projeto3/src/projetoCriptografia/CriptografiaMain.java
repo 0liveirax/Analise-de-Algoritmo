@@ -2,6 +2,7 @@ package projetoCriptografia;
 
 import javax.swing.JOptionPane;
 
+//Autor : Guilherme de Oliveira
 public class CriptografiaMain {   
     
     public static int ASCII;
