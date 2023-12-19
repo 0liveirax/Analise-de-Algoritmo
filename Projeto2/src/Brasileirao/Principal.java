@@ -37,8 +37,21 @@ public class Principal {
         
         //Exibe a diferença dos Cincos Ultimos
         time.DiferencaPontos(tabela, tabela.size() - 5, tabela.size());
-
         
+        //Ordena por BubbleSort
+        Collections.shuffle(tabela);
+        time.BubbleSort(tabela);
+        
+        //Ordena por InsertionSort
+        Collections.shuffle(tabela);
+        time.InsertionSort(tabela);
+        
+        //Ordena por SelectionSort
+        Collections.shuffle(tabela);
+        time.SelectionSort(tabela);
+        
+
+        // Algoritmo 6: Reordenar a tabela para exibir apenas metade dos times com base na quantidade de pontos
         System.out.println("\nMetade dos Times com base na quantidade de pontos:");
         reordenarETamanhoMetade(tabela);
         exibirTabela(tabela);

@@ -12,7 +12,11 @@ public class Time {
     StringBuilder resultado2 = new StringBuilder();
     StringBuilder resultado3 = new StringBuilder();
     StringBuilder resultado4 = new StringBuilder();
+    StringBuilder resultado5 = new StringBuilder();
+    StringBuilder resultado6 = new StringBuilder();
+    StringBuilder resultado7 = new StringBuilder();
 
+    
     public Time(String nome, int pontos) {
         this.nome = nome;
         this.pontos = pontos;
@@ -110,11 +114,100 @@ public class Time {
         }                        
     }
     
+    public void BubbleSort(List<Time> time){        
+        int aux;
+        int primeiro;        
+        
+        for(int i = 0 ; i<time.size() ; i++){ 
+            Time resultados = time.get(i);
+            for(int j = i + 1 ; j<=time.size()-1 ; j++){
+                Time fix = time.get(i);
+                Time var = time.get(j);
+                if(fix.getPontos() < var.getPontos()){
+                    aux = fix.getPontos();
+                    primeiro = var.getPontos();
+                    fix.setPontos(primeiro);
+                    var.setPontos(aux);                                        
+                }                
+            }
+            resultado5.append("Time: ")
+                     .append(resultados.getNome())
+                     .append("; Pontos ")
+                     .append(resultados.getPontos())
+                     .append("\n");
+            
+        }
+        JOptionPane.showMessageDialog(null, resultado5);
+    }
+    int i, j;
+    
+    
+    public void InsertionSort(List<Time> time){
+        resultado6.append("INSERTION SORT\n\n");
+        for (i = 1; i < time.size(); i++) {
+            Time resultados = time.get(i);
+            j = i - 1;
+
+            while (j >= 0 && time.get(j).getPontos() < resultados.getPontos()) {
+                time.set(j + 1, time.get(j));
+             j--;
+        }
+
+        time.set(j + 1, resultados);
+    }
+
+    for (Time t : time) {
+        resultado6
+                .append("Time: ")
+                .append(t.getNome())
+                .append("; Pontos ")
+                .append(t.getPontos())
+                .append("\n");
+        }
+        JOptionPane.showMessageDialog(null, resultado6);
+    }
+    
+    public void SelectionSort(List<Time> time){
+        resultado7.append("SelectionSort\n\n");
+        int menor = 0;
+        int menoraux = 0;
+        for(int i = 0 ; i < time.size() ; i ++){
+            Time resultados = time.get(i);
+            for(j = i + 1 ; j < time.size() ; j ++){
+               if(time.get(i).getPontos() > time.get(j).getPontos()){
+                   menor = time.get(j).getPontos();
+               }
+            }
+            resultados.setPontos(menor);
+            resultado7
+                .append("Time: ")
+                .append(resultados.getNome())
+                .append("; Pontos ")
+                .append(resultados.getPontos())
+                .append("\n");
+        }
+        JOptionPane.showMessageDialog(null, resultado7);
+    }
+
     public String getNome() {
         return nome;
     }
 
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
     public int getPontos() {
         return pontos;
+    }
+
+    public void setPontos(int pontos) {
+        this.pontos = pontos;
+    }
+    
+    
+
+    private boolean getPontos(int i) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }
