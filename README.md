@@ -1,7 +1,6 @@
-# analise-de-algoritmo
+# Análise-Algoritmo
 
 Projetos solicitados pelo Professor: Felipe Oliveira.
------------------------------------------------------
 
 Projeto solicitado o intuito de absorvermos a essência 
 da complexibilidade dos algorítmos e praticarmos o que 
